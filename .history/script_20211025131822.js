@@ -44,35 +44,11 @@ console.log(arr.unique());
  * Challenge #
  * */
 
-const ACCELERATE = 10;
-const BRAKE = -5;
-
 const Car = function (make, speed) {
   this.make = make;
   this.speed = speed;
 };
 
 Car.prototype.accelerate = function () {
-  let accSpeed = (this.speed += ACCELERATE);
-  console.log(`${this.make} is going at ${accSpeed}km/h`);
+  console.log(this.speed + 10);
 };
-
-Car.prototype.brake = function () {
-  let brakeSpeed = (this.speed += BRAKE);
-  console.log(`${this.make} is going at ${brakeSpeed}km/h`);
-};
-
-const car_1 = new Car('BMW', 120);
-const car_2 = new Car('Mercedes', 90);
-
-console.log(car_1);
-console.log(car_2);
-
-car_1.accelerate();
-car_1.accelerate();
-car_2.accelerate();
-
-car_1.brake();
-car_1.brake();
-car_2.brake();
-car_2.brake();
