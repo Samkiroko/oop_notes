@@ -20,9 +20,3 @@ console.log(sam, joy, myles);
 Person.prototype.calcAge = function () {
   console.log(2037 - this.birthYear);
 };
-
-sam.calcAge();
-joy.calcAge();
-myles.calcAge();
-
-console.log(sam.__proto__);

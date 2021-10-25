@@ -22,7 +22,3 @@ Person.prototype.calcAge = function () {
 };
 
 sam.calcAge();
-joy.calcAge();
-myles.calcAge();
-
-console.log(sam.__proto__);
