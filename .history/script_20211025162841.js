@@ -161,13 +161,11 @@ class Car {
     console.log(`${miles}mi/h`);
   }
   set speedUs(miles) {
-    this.speed = miles * 1.6;
-    console.log(`${this.speed}mi/h`);
+    let km = miles * 1.6;
+    console.log(`${km}mi/h`);
   }
 }
 
 const ford = new Car('Ford', 120);
 console.log(ford);
 console.log(ford.speedUs);
-ford.speedUs = 120;
-console.log(ford);

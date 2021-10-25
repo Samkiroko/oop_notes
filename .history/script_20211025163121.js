@@ -162,7 +162,7 @@ class Car {
   }
   set speedUs(miles) {
     this.speed = miles * 1.6;
-    console.log(`${this.speed}mi/h`);
+    console.log(`${km}mi/h`);
   }
 }
 
