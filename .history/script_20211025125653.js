@@ -26,16 +26,4 @@ joy.calcAge();
 myles.calcAge();
 
 console.log(sam.__proto__.__proto__);
-console.log(sam.__proto__.__proto__.__proto__);
 console.log(sam.hasOwnProperty('firstName'));
-console.log(Person.prototype.constructor);
-
-const arr = [3, 5, 6, 6, 4, 5, 6, 7];
-console.log(arr.__proto__);
-console.log(arr.__proto__ === Array.prototype);
-
-Array.prototype.unique = function () {
-  return [...new Set(this)];
-};
-
-console.log(arr.unique());

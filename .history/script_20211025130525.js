@@ -38,4 +38,4 @@ Array.prototype.unique = function () {
   return [...new Set(this)];
 };
 
-console.log(arr.unique());
+console.log(arr.unique);
