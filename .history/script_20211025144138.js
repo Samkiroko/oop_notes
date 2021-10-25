@@ -80,22 +80,3 @@
 // ////////////////////////////////////////////////
 // ES6 classes
 // ////////////////////////////////////////////////
-
-// class declaration
-class Person {
-  constructor(firstName, birthYear) {
-    this.firstName = firstName;
-    this.birthYear = birthYear;
-  }
-  calcAge() {
-    console.log(2037 - this.birthYear);
-  }
-  greet() {
-    console.log(`hey ${this.firstName}`);
-  }
-}
-
-const jessica = new Person('samuel', 1966);
-console.log(jessica);
-jessica.calcAge();
-jessica.greet();

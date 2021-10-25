@@ -91,11 +91,10 @@ class Person {
     console.log(2037 - this.birthYear);
   }
   greet() {
-    console.log(`hey ${this.firstName}`);
+    console.log(`${this.firstName}`);
   }
 }
 
 const jessica = new Person('samuel', 1966);
 console.log(jessica);
 jessica.calcAge();
-jessica.greet();

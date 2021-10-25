@@ -91,7 +91,7 @@ class Person {
     console.log(2037 - this.birthYear);
   }
   greet() {
-    console.log(`hey ${this.firstName}`);
+    console.log(`${this.firstName}`);
   }
 }
 
