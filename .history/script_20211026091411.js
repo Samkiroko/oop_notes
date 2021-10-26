@@ -257,10 +257,10 @@ StudentProto.init = function (firstName, birthYear, course) {
 };
 
 StudentProto.introduce = function () {
-  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+  console.log(`My name is ${this.name} and I study ${this.course}`);
 };
 
-const jay = Object.create(StudentProto);
+const jay = Object.create(PersonProto);
 jay.init('jay', 2010, 'Computer Science');
 jay.introduce();
 jay.calcAge();

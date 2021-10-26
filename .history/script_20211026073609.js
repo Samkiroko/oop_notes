@@ -172,95 +172,28 @@
 // ford.speedUs = 120;
 // console.log(ford);
 
-// const Person = function (firstName, birthYear) {
-//   this.firstName = firstName;
-//   this.birthYear = birthYear;
-// };
-// Person.prototype.calcAge = function () {
-//   console.log(2040 - this.birthYear);
-// };
-
-// const Student = function (firstName, birthYear, course) {
-//   // this.firstName = firstName;
-//   // this.birthYear = birthYear;
-//   Person.call(this, firstName, birthYear);
-//   this.course = course;
-// };
-// // linking the prototype
-// Student.prototype = Object.create(Person.prototype);
-
-// Student.prototype.introduce = function () {
-//   console.log(
-//     `My name is ${this.firstName} and I study ${this.course}, i will be in 2040`
-//   );
-// };
-
-// const sam = new Student('mike', 2020, 'Computer Science');
-// sam.introduce();
-
-// const Car = function (make, speed) {
-//   this.make = make;
-//   this.speed = speed;
-// };
-
-// Car.prototype.accelerate = function () {
-//   return (this.speed += 10);
-// };
-
-// Car.prototype.brake = function () {
-//   return (this.speed -= 5);
-// };
-
-// const EV = function (make, speed, charge) {
-//   Car.call(this, make, speed);
-//   this.charge = charge;
-// };
-
-// // Link the prototypes
-// EV.prototype = Object.create(Car.prototype);
-
-// EV.prototype.chargeBattery = function (chargeTo) {
-//   this.charge = chargeTo;
-// };
-
-// EV.prototype.accelerate = function () {
-//   this.speed += 20;
-//   this.charge--;
-//   console.log(
-//     `${this.make} is going at ${this.speed} km/h, with a charge of ${this.charge}`
-//   );
-// };
-
-// const tesla = new EV('Tesla', 120, 23);
-// tesla.chargeBattery(90);
-// console.log(tesla);
-// tesla.brake();
-// tesla.accelerate();
-// tesla.accelerate();
-
-const PersonProto = {
-  calcAge() {
-    console.log(2037 - this.birthYear);
-  },
-  init(firstName, birthYear) {
-    this.firstName = firstName;
-    this.birthYear = birthYear;
-  },
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+Person.prototype.calcAge = function () {
+  console.log(2040 - this.birthYear);
 };
 
-const steven = Object.create(PersonProto);
-
-const StudentProto = Object.create(PersonProto);
-StudentProto.init = function (firstName, birthYear, course) {
-  PersonProto.init.call(this, firstName, birthYear);
+const Student = function (firstName, birthYear, course) {
+  // this.firstName = firstName;
+  // this.birthYear = birthYear;
+  Person.call(this, firstName, birthYear);
   this.course = course;
 };
+// linking the prototype
+Student.prototype = Object.create(Person.prototype);
 
-StudentProto.introduce = function () {
-  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+Student.prototype.introduce = function () {
+  console.log(
+    `My name is ${this.firstName} and I study ${this.course}, i will be in 2040`
+  );
 };
 
-const jay = Object.create(StudentProto);
-jay.init('jay', 2010, 'Computer Science');
-jay.introduce();
-jay.calcAge();
+const sam = new Student('mike', 2020, 'Computer Science');
+sam.introduce();
