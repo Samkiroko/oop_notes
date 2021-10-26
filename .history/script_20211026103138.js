@@ -306,7 +306,6 @@ class Account {
     if (this.#approveLoan(val)) {
       this.deposit(val);
       console.log('loan approved');
-      return this;
     }
   }
 }

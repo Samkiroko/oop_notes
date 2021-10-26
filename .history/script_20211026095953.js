@@ -281,7 +281,7 @@ class Account {
   constructor(owner, currency, pin) {
     this.owner = owner;
     this.currency = currency;
-    this.#pin = pin;
+    this._pin = pin;
     // protected property
     this.#movement = [];
     this.locale = navigator.language;
@@ -293,20 +293,17 @@ class Account {
   }
   deposit(val) {
     this.#movement.push(val);
-    return this;
   }
   withdraw(val) {
     this.deposit(-val);
-    return this;
   }
-  #approveLoan(val) {
+  _approveLoan(val) {
     return true;
   }
   requestLoan(val) {
-    if (this.#approveLoan(val)) {
+    if (this._approveLoan(val)) {
       this.deposit(val);
       console.log('loan approved');
-      return this;
     }
   }
 }
@@ -318,5 +315,3 @@ acc1.deposit(250);
 acc1.withdraw(140);
 console.log(acc1);
 acc1.requestLoan(1000);
-console.log(acc1.pin);
-// console.log(acc1.#approvedLoan);

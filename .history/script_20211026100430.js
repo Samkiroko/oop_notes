@@ -293,11 +293,9 @@ class Account {
   }
   deposit(val) {
     this.#movement.push(val);
-    return this;
   }
   withdraw(val) {
     this.deposit(-val);
-    return this;
   }
   #approveLoan(val) {
     return true;
@@ -306,7 +304,6 @@ class Account {
     if (this.#approveLoan(val)) {
       this.deposit(val);
       console.log('loan approved');
-      return this;
     }
   }
 }
@@ -318,5 +315,5 @@ acc1.deposit(250);
 acc1.withdraw(140);
 console.log(acc1);
 acc1.requestLoan(1000);
-console.log(acc1.pin);
-// console.log(acc1.#approvedLoan);
+console.log(acc1.#pin);
+console.log(acc1.#approvedLoan);

@@ -271,42 +271,34 @@
 // private methods
 
 class Account {
-  // 1) public fields (instance)
   locale = navigator.language;
-
-  // 2) private fields
-  #movement = [];
-  #pin;
-
+  _movement = [];
   constructor(owner, currency, pin) {
     this.owner = owner;
     this.currency = currency;
-    this.#pin = pin;
+    this._pin = pin;
     // protected property
-    this.#movement = [];
+    this._movement = [];
     this.locale = navigator.language;
   }
   // public
   // avoid data charge
   getMovement() {
-    return this.#movement;
+    return this._movement;
   }
   deposit(val) {
-    this.#movement.push(val);
-    return this;
+    this._movement.push(val);
   }
   withdraw(val) {
     this.deposit(-val);
-    return this;
   }
-  #approveLoan(val) {
+  _approveLoan(val) {
     return true;
   }
   requestLoan(val) {
-    if (this.#approveLoan(val)) {
+    if (this._approveLoan(val)) {
       this.deposit(val);
       console.log('loan approved');
-      return this;
     }
   }
 }
@@ -318,5 +310,3 @@ acc1.deposit(250);
 acc1.withdraw(140);
 console.log(acc1);
 acc1.requestLoan(1000);
-console.log(acc1.pin);
-// console.log(acc1.#approvedLoan);
